@@ -1,0 +1,18 @@
+# .agent-scaffold.lock
+# 由 agent-scaffold install 脚本自动生成，请勿手动编辑
+# 将此文件提交到 git 仓库以同步所有 Agent 的脚手架版本
+
+scaffold:
+  repo: https://github.com/LucasGuoo/agent-scaffold
+  version: 0.1.0
+  sha: ""
+  installed_at: ""
+  install_dir: .agent
+
+profiles:
+  # 此项目启用的 Agent 角色
+  # 安装时按此列表筛选 skills，减少 token 消耗
+  enabled:
+    - planner
+    - implementer
+    - reviewer
