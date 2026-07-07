@@ -88,7 +88,27 @@ allowed-tools: read, write, edit, exec
 
 ## 给接手 Agent 的指示
 
+### 必读清单（按顺序）
+
 1. `git pull origin main`
-2. 读取 `specs/active/<name>/handoff.md`
-3. 读取所有相关 spec 文件（proposal / design / tasks）
-4. 从 handoff.md 中「下一步建议」开始工作
+2. 读取 `specs/active/<name>/handoff.md` — 交接状态
+3. 读取 `specs/active/<name>/proposal.md` — 理解需求背景
+4. 读取 `specs/active/<name>/design.md` — 理解技术方案（如存在）
+5. 读取 `specs/active/<name>/tasks.md` — 查看进度（checkbox 状态）
+6. 读取 `specs/active/<name>/context.md` — 关键决策和上下文（如存在）
+7. 读取 `docs/constitution.md` — 项目宪法（如存在）
+8. 读取 `docs/project-rules.md` — 项目特定规则（如存在）
+9. 从 handoff.md 中「下一步建议」开始工作
+
+### 第一次 commit 前
+
+- 确认工作区干净（`git status`）
+- 在 handoff.md 末尾追加「接手确认：YYYY-MM-DD HH:MM」
+- commit: `handoff(<spec-name>): <接手 Agent> 已接手`
+
+## 交接反模式（避免）
+
+- ❌ 交接文件只写"完成了，你继续" — 不够具体
+- ❌ 不写当前 commit SHA — 接手方无法确认起点
+- ❌ 不写"注意事项"中的坑 — 接手方会重复踩坑
+- ❌ push 前不清空自己的临时文件/调试代码 — 污染仓库

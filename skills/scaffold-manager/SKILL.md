@@ -65,7 +65,9 @@ latest_tag=$(git describe --tags --abbrev=0)
 | 平台 | 安装脚本路径 |
 |------|-------------|
 | QClaw | `platforms/qclaw/install.sh` |
+| WorkBuddy | `platforms/workbuddy/install.sh` |
 | Claude Code | `platforms/claude-code/install.sh` |
+| Trae IDE | `platforms/trae/install.sh` |
 | Codex | `platforms/codex/install.sh` |
 | 通用 | `platforms/generic/install.sh` |
 
@@ -74,11 +76,32 @@ latest_tag=$(git describe --tags --abbrev=0)
 按以下顺序检测当前平台：
 
 ```
-1. 环境中有 qclaw 命令 → QClaw
-2. 环境中有 claude 命令且 .claude/ 目录存在 → Claude Code
-3. 环境中有 codex 命令 → Codex
-4. 都不满足 → Generic
+1. 环境中有 openclaw 命令 或 ~/.qclaw 目录存在 → QClaw
+2. 环境中有 workbuddy 命令 或 ~/.workbuddy 目录存在 → WorkBuddy
+3. 环境中有 claude 命令 → Claude Code
+4. 环境中有 trae 命令 或 ~/.trae 目录存在 → Trae IDE
+5. 环境中有 codex 命令 或 ~/.codex 目录存在 → Codex
+6. 都不满足 → Generic
 ```
+
+## 安装验证
+
+安装完成后，执行以下验证：
+
+```bash
+# 检查 skills 目录是否存在且非空
+ls -la .agent/<platform>/skills/*/SKILL.md
+
+# 检查 SKILL.md 格式是否合规（name + description 必填）
+for f in .agent/<platform>/skills/*/SKILL.md; do
+  echo "=== $f ==="
+  head -10 "$f"
+  grep -q "^name:" "$f" && echo "  ✅ name 字段" || echo "  ❌ 缺 name"
+  grep -q "^description:" "$f" && echo "  ✅ description 字段" || echo "  ❌ 缺 description"
+done
+```
+
+验证不通过 → 回滚 `.agent/` 目录，报告错误。
 
 ## 输出
 
