@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - 初始化仓库结构
+- 6 个平台安装脚本：QClaw / WorkBuddy / Claude Code / Trae / Codex / Generic
 - `skills/sdd-workflow/SKILL.md` — SDD 工作流总路由器
 - `skills/spec-proposal/SKILL.md` — 需求分析与 proposal 起草
 - `skills/spec-design/SKILL.md` — 技术方案设计
@@ -19,8 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `skills/handoff/SKILL.md` — Agent 间交接协议
 - `skills/changelog-update/SKILL.md` — CHANGELOG 更新
 - `skills/scaffold-manager/SKILL.md` — 脚手架自管理
-- `platforms/qclaw/install.sh` — QClaw 安装脚本
-- `platforms/claude-code/install.sh` — Claude Code 安装脚本
-- `platforms/generic/install.sh` — 通用安装脚本
-- `templates/` — spec 和文档模板（从 spec-driven-project-template 迁移）
-- `scripts/validate-skills.sh` — SKILL.md 格式校验
+
+- `templates/` — 7 个 spec 模板（proposal/design/tasks/change-proposal/handoff/verdict/context）
+- `scripts/validate-skills.sh` — SKILL.md 格式校验（10/10 通过）

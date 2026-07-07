@@ -2,7 +2,9 @@
 
 > 跨平台 Agent 脚手架：SDD 工作流 skills、自举安装、Anthropic Skills 标准
 
-给编程 Agent 用的标准化工作流技能包。任何兼容 Anthropic Skills 标准的 Agent 工具（QClaw、Claude Code、Codex、Cursor 等）都能安装使用。
+给编程 Agent 用的标准化工作流技能包。任何兼容 Anthropic Skills 标准的 Agent 工具都能安装使用。
+
+**已支持 6 个平台**：QClaw、WorkBuddy、Claude Code、Trae、Codex、Generic
 
 ## 核心理念
 
@@ -23,19 +25,14 @@ bash /tmp/agent-scaffold/platforms/generic/install.sh /path/to/your/project
 rm -rf /tmp/agent-scaffold
 ```
 
-### 给 QClaw 项目安装
-
-```bash
-git clone https://github.com/LucasGuoo/agent-scaffold.git /tmp/agent-scaffold
-bash /tmp/agent-scaffold/platforms/qclaw/install.sh /path/to/your/project
-```
-
-### 给 Claude Code 项目安装
-
-```bash
-git clone https://github.com/LucasGuoo/agent-scaffold.git /tmp/agent-scaffold
-bash /tmp/agent-scaffold/platforms/claude-code/install.sh /path/to/your/project
-```
+| 平台 | 安装目录 | 安装命令 |
+|------|---------|----------|
+| QClaw | `.agent/qclaw/skills/` | `bash platforms/qclaw/install.sh <project>` |
+| WorkBuddy | `.agent/workbuddy/skills/` | `bash platforms/workbuddy/install.sh <project>` |
+| Claude Code | `.claude/skills/` | `bash platforms/claude-code/install.sh <project>` |
+| Trae IDE | `.trae/skills/` | `bash platforms/trae/install.sh <project>` |
+| Codex | `.codex/skills/` | `bash platforms/codex/install.sh <project>` |
+| 通用 | `.agent/skills/` | `bash platforms/generic/install.sh <project>` |
 
 ## Skills 列表
 
@@ -71,7 +68,10 @@ agent-scaffold/
 │   └── scaffold-manager/SKILL.md
 ├── platforms/             ← 各平台安装脚本
 │   ├── qclaw/install.sh
+│   ├── workbuddy/install.sh
 │   ├── claude-code/install.sh
+│   ├── trae/install.sh
+│   ├── codex/install.sh
 │   └── generic/install.sh
 ├── templates/             ← spec 模板
 │   ├── proposal.md
