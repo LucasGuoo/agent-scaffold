@@ -5,6 +5,18 @@ All notable changes to agent-scaffold will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+- **架构简化：Skills 从 10 个精简为 8 个**
+  - 砍掉 `handoff` — 接手信息直接写在 `tasks.md` 末尾
+  - 砍掉 `changelog-update` — 规则合并到 `sdd-workflow`
+- `sdd-workflow` 升级 v0.2.0：内置 CHANGELOG 规范 + 隐私/安全约定 + sub-skill 索引
+- `spec-implement` 移除 handoff.md 引用，接手上下文写入 tasks.md
+- `change-proposal` 移除 changelog-update skill 引用
+- `templates/handoff.md` 移除
+- `README.md` 更新核心理念和 skills 列表
+
 ## [0.1.0] - 2026-07-07
 
 ### Added
@@ -18,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `skills/spec-review/SKILL.md` — 验收审查（7 项清单 + 三态 verdict）
 - `skills/change-proposal/SKILL.md` — 轻量变更流（适用/不适用场景 + 4 步骤）
 - `skills/handoff/SKILL.md` — Agent 间交接协议（必读清单 + 交接反模式）
-- `skills/changelog-update/SKILL.md` — CHANGELOG 更新（分类表 + 版本发布流程）
+- `skills/changelog-update/SKILL.md` — CHANGELOG 更新（分类 + 版本发布流程）
 - `skills/scaffold-manager/SKILL.md` — 脚手架自管理（install/update/check/uninstall + 安装验证）
-- `templates/` — 7 个 spec 模板（proposal/design/tasks/change-proposal/handoff/verdict/context）
-- `scripts/validate-skills.sh` — SKILL.md 格式校验（10/10 通过）
+- `templates/` — 7 个 spec 模板
+- `scripts/validate-skills.sh` — SKILL.md 格式校验

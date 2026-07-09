@@ -44,7 +44,7 @@ allowed-tools: read, write, edit, exec
    - 有没有超出 scope 的改动？
    - 有没有遗漏的 task？
    - 代码是否符合 `docs/constitution.md` 的规范？
-3. 更新 `handoff.md`（如果下一个 Agent 需要接手）
+3. 在 `tasks.md` 末尾补充任何接手者需要知道的上下文
 
 ### Step 4: 提交
 
@@ -55,8 +55,7 @@ allowed-tools: read, write, edit, exec
 ## 输出
 
 - 代码变更（多个 commit）
-- 更新后的 `tasks.md`（checkbox 已勾选）
-- 更新的 `handoff.md`（如有工具切换）
+- 更新后的 `tasks.md`（checkbox 已勾选，内附接手上下文）
 
 ## 约束
 

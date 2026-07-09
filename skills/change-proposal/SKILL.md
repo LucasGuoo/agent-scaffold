@@ -81,7 +81,7 @@ allowed-tools: read, write, edit
 
 1. 完成变更
 2. 在 change-proposal.md 末尾记录「已完成 YYYY-MM-DD」
-3. 更新 CHANGELOG.md（加载 changelog-update skill）
+3. 更新 CHANGELOG.md（Change 类归入 Changed 或 Fixed）
 4. commit: `change(<name>): <简要描述>`
 
 ## 输出
